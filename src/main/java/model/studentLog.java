@@ -24,7 +24,7 @@ public class studentLog implements Serializable{
     	public studentLog() {
 	}
         
-        public studentLog(String SN, String name, String entrytype, String temstamp) {
+        public studentLog(String SN) {
                 super();
                 this.setSN(SN);
     }

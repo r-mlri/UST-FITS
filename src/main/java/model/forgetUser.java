@@ -16,14 +16,14 @@ import java.sql.SQLException;
 public class forgetUser {
    public boolean check(String username, String resetpin) throws ClassNotFoundException, SQLException
    {
-       String url = "jdbc:mysql://localhost:3306/ustfits/accounts";
+       String url = "jdbc:mysql://localhost:3306/ustfits";
        String conusername = "root";
        String conpassword = "MyNewPass";
        
        String sql = "SELECT * FROM ACCOUNTS WHERE USERNAME=? AND RESETPIN=?";
        
        try {
-       Class.forName("org.apache.derby.jdbc.ClientDriver");
+       Class.forName("com.mysql.cj.jdbc.Driver");
        Connection con = DriverManager.getConnection(url, conusername, conpassword);
        PreparedStatement st = con.prepareStatement(sql);
        st.setString(1, username);

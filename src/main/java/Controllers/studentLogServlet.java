@@ -11,7 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import model.studententrylog;
+import model.studentLog;
 
 /**
  *
@@ -21,18 +23,29 @@ import model.studententrylog;
 
 @WebServlet(name = "StudentLog.jsp")
 public class studentLogServlet extends HttpServlet {
+        private static final long serialVersionUID = 1L;
+        private studententrylog insert;
         
+        public void init() {
+        insert = new studententrylog();
+    }
         
-        
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-            
         
             String SN = request.getParameter("SN");
             
             if(SN != null)
-            {                
-                response.sendRedirect("success.jsp");                             
+            {   
+                response.sendRedirect("Index.jsp");                             
             }
             else 
                 {
@@ -41,14 +54,16 @@ public class studentLogServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			if (SN == null) 
                         {
-				response.sendRedirect("fail.jsp");
-			} 
-                        else 
-                        {
-				response.sendRedirect("error.jsp");
+				response.sendRedirect("Index.jsp");
 			}
 			rd.include(request, response);
                 }
+                        studentLog student = new studentLog();
+                        student.setSN(SN);
+                        try {
+                            insert.registerStudent(student);
+                        } catch (ClassNotFoundException e) {
+                        }
         }
 }
             

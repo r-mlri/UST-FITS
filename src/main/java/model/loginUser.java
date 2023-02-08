@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class loginUser {
    public boolean check(String username, String password, String role) throws ClassNotFoundException, SQLException
    {
-       String url = "jdbc:mysql://localhost:3306/ustfits/accounts";
+       String url = "jdbc:mysql://localhost:3306/ustfits";
        String conusername = "root";
        String conpassword = "MyNewPass";
        
@@ -38,8 +38,7 @@ public class loginUser {
        }
        
        }
-       catch(Exception e) {
-           e.printStackTrace();
+       catch(ClassNotFoundException | SQLException e) {
        }
  
        return false;
