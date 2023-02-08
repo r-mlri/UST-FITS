@@ -9,56 +9,24 @@ import java.io.Serializable;
 
 
 public class studentLog implements Serializable{
-	private String sn;
-	private String name;
-        private String entrytype;
-        private String timestamp;
+	private String SN;
 
     public String getSN() {
-        return sn;
+        return SN;
     }
 
 
-    public void setSN(String sn) {
-        this.sn = sn;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getEntryType() {
-        return entrytype;
-    }
-
-    public void setEntryType(String entrytype) {
-        this.entrytype = entrytype;
-    }
-    
-    public String getTimeStamp() {
-        return timestamp;
-    }
-
-    public void setTimeStamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setSN(String SN) {
+        this.SN = SN;
     }
     
     
     	public studentLog() {
 	}
         
-        public studentLog(String sn, String name, String entrytype, String temstamp) {
+        public studentLog(String SN, String name, String entrytype, String temstamp) {
                 super();
-                this.setSN(sn);
-                this.setName(name);
-                this.setEntryType(entrytype);
-                this.setTimeStamp(timestamp);
+                this.setSN(SN);
     }
     
 }

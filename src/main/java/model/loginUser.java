@@ -23,7 +23,7 @@ public class loginUser {
        String sql = "SELECT * FROM ACCOUNTS WHERE USERNAME=? AND PASSWORD=? AND ROLE=?";
        
        try {
-       Class.forName("org.apache.derby.jdbc.ClientDriver");
+       Class.forName("com.mysql.cj.jdbc.Driver");
        Connection con = DriverManager.getConnection(url, conusername, conpassword);
        PreparedStatement st = con.prepareStatement(sql);
        st.setString(1, username);

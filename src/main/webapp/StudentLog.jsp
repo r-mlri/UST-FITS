@@ -169,7 +169,7 @@
       <h1>Student Log</h1>
       <form action="">
          <form>
-             <input type="text" placeholder="Student Number" name= "sn" required>
+             <input type="text" placeholder="Student Number" name= "SN" required>
         <input type="submit" value="Log"> 
       </form>
     </div>

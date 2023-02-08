@@ -28,7 +28,7 @@ public class studentLogServlet extends HttpServlet {
     throws ServletException, IOException {
             
         
-            String SN = request.getParameter("sn");
+            String SN = request.getParameter("SN");
             
             if(SN != null)
             {                

@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Thomas Jefferson Qiu, Ezekiel Giron
@@ -20,8 +22,32 @@ public class studententrylog{
             " (?)";
 
         int result = 0;
+        
+        
+String dbURL = "jdbc:mysql://localhost:3306/ustfits";
+String username = "root";
+String password = "MyNewPass";
 
-        Class.forName("org.apache.derby.jdbc.ClientDriver");
+        
+       try {
+    Connection conn = DriverManager.getConnection(dbURL, username, password);
+    PreparedStatement preparedStatement = conn.prepareStatement(INSERT);
+    
+    preparedStatement.setString(1, student.getSN());
+    System.out.println(preparedStatement);
+    result = preparedStatement.executeUpdate();
+
+} catch (SQLException ex) {
+    ex.printStackTrace();
+}
+       return result;
+
+                
+
+                        
+
+        
+       /* Class.forName("com.mysql.cj.jdbc.Driver");
 
         try (Connection connection = DriverManager
             .getConnection("jdbc:mysql://localhost:3306/ustfits/studententrylog", "root", "MyNewPass");
@@ -52,7 +78,6 @@ public class studententrylog{
                     System.out.println("Cause: " + t);
                     t = t.getCause();
                 }
-            }
-        }
-     }
+            }*/
+    }
 }

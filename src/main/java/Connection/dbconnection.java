@@ -16,7 +16,7 @@ public class dbconnection {
     public static Connection getConnection(){
         Connection con=null;
         try{
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
                 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ustfits","root","MyNewPass");
           }catch (ClassNotFoundException e){
                 e.printStackTrace(); 
