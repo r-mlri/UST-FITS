@@ -24,7 +24,7 @@ public class studententrylog{
         Class.forName("org.apache.derby.jdbc.ClientDriver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/ustfits/accounts", "root", "MyNewPass");
+            .getConnection("jdbc:mysql://localhost:3306/ustfits/studententrylog", "root", "MyNewPass");
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT)) {

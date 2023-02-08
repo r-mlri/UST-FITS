@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import model.studententrylog;
 
 /**
  *
@@ -32,7 +32,7 @@ public class studentLogServlet extends HttpServlet {
             
             if(SN != null)
             {                
-                response.sendRedirect("*");                             
+                response.sendRedirect("success.jsp");                             
             }
             else 
                 {
@@ -41,11 +41,11 @@ public class studentLogServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			if (SN == null) 
                         {
-				response.sendRedirect("*");
+				response.sendRedirect("fail.jsp");
 			} 
                         else 
                         {
-				response.sendRedirect("*");
+				response.sendRedirect("error.jsp");
 			}
 			rd.include(request, response);
                 }
