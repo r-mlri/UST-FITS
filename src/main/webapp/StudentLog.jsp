@@ -137,11 +137,11 @@
     <span>&#128214;</span>
     <nav>
       <!-- Add the menu options -->
-      <a href="Index.jsp">Home</a>
+      <a href="index.jsp">Home</a>
       <a href="#">Equipments</a>
       <a href="#">Trainers</a>
       <a href="StudentLog.jsp">Student Log</a>
-      <a href="StudentExit.jsp">Student Exit</a>
+      <a href="#">Student Exit</a>
       <a href="Login.jsp">Personnel Login</a>
     </nav>
   </header>
@@ -168,8 +168,8 @@
    <div class="form-container">
       <h1>Student Log</h1>
       <form action="">
-        <form action ="<%= request.getContextPath() %>/StudentLog" method="get"action="studentLogServlet">
-             <input type="number" name= "SN" class="input-field" placeholder="Student Number" required>
+         <form>
+    	<input type="text" placeholder="Student Number" required>
         <input type="submit" value="Log"> 
       </form>
     </div>
