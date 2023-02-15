@@ -168,8 +168,8 @@
    <div class="form-container">
       <h1>Student Log</h1>
       <form action="">
-        <form action ="<%= request.getContextPath() %>/StudentLog" method="POST">
-             <input type="text" class="input-field" placeholder="Student Number" name= "SN" required>
+        <form action ="<%= request.getContextPath() %>/StudentLog" method="get"action="studentLogServlet">
+             <input type="number" name= "SN" class="input-field" placeholder="Student Number" required>
         <input type="submit" value="Log"> 
       </form>
     </div>

@@ -3,10 +3,50 @@
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>Controllers.loginServlet</servlet-class>
+        <init-param>
+            <param-name>jdbcClassName</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUserName</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>MyNewPass</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriverURL</param-name>
+            <param-value>jdbc:mysql://localhost:3306/ustfits?useSSL=false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>ustfits</param-value>
+        </init-param>
     </servlet>
     <servlet>
         <servlet-name>studentLogServlet</servlet-name>
         <servlet-class>Controllers.studentLogServlet</servlet-class>
+        <init-param>
+            <param-name>jdbcClassName</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUserName</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>MyNewPass</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriverURL</param-name>
+            <param-value>jdbc:mysql://localhost:3306/ustfits?useSSL=false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>ustfits</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>

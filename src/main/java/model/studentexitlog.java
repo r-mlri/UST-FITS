@@ -8,44 +8,19 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import model.studentLog;
 /**
  *
- * @author Thomas Jefferson Qiu, Ezekiel Giron
+ * @author Thomas Jefferson Qiu
  */
-public class studententrylog{   
-    public boolean insertData (int SN, Connection conn)        
-    {
-         try
-         {
-             String query = "INSERT into studententrylog SET SN = ?";
-
-            PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);  
-            ps.setInt(1, SN);
-            
-            ps.executeUpdate();
-        } catch (SQLException ex) 
-        {
-            Logger.getLogger(studentselectlog.class.getName()).log(Level.SEVERE, null, ex);
-        }return true;
-    }
-}
-
-    
-    /*
+public class studentexitlog {
     public int registerStudent(studentLog student) throws ClassNotFoundException {
-        String INSERT = "INSERT INTO studententrylog" +
-            "  (SN, NAME, ENTRYTYPE, TIMESTAMP) VALUES " +
-            " (?, ?, IN, ?)";
-
+        String INSERT = "INSERT INTO studentexitlog" +
+            "  (SN, NAME, ENTRYTYPE, TIMESTAMP, EQUIPMENTS) VALUES " +
+            " (?,?, OUT, ?, ?)";
+        
         int result = 0;
-        
-        
         
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (Connection connection = DriverManager
@@ -54,7 +29,7 @@ public class studententrylog{
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT)) {
             preparedStatement.setString(1, student.getSN());
-            preparedStatement.setString(2, student.getEQUIPMENTS());
+            preparedStatement.setString(1, student.getEQUIPMENTS());
             
 
             System.out.println(preparedStatement);
@@ -66,7 +41,8 @@ public class studententrylog{
         }
         return result;
     }
-     private void printSQLException(SQLException ex) {
+
+    private void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
@@ -81,4 +57,5 @@ public class studententrylog{
             }
         }
      }
-}*/
+    
+}
