@@ -201,7 +201,7 @@ Trainers page.txt
   <!-- Add the footer -->
 
   <footer>
-    University of Santo Tomas ©2023
+      <%@include  file="../headcoda/footer.jsp"%>
   </footer>
 
   <script>
