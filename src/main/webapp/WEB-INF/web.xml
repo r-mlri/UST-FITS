@@ -3,50 +3,10 @@
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>Controllers.loginServlet</servlet-class>
-        <init-param>
-            <param-name>jdbcClassName</param-name>
-            <param-value>com.mysql.cj.jdbc.Driver</param-value>
-        </init-param>
-        <init-param>
-            <param-name>dbUserName</param-name>
-            <param-value>root</param-value>
-        </init-param>
-        <init-param>
-            <param-name>dbPassword</param-name>
-            <param-value>MyNewPass</param-value>
-        </init-param>
-        <init-param>
-            <param-name>jdbcDriverURL</param-name>
-            <param-value>jdbc:mysql://localhost:3306/ustfits?useSSL=false</param-value>
-        </init-param>
-        <init-param>
-            <param-name>databaseName</param-name>
-            <param-value>ustfits</param-value>
-        </init-param>
     </servlet>
     <servlet>
         <servlet-name>studentLogServlet</servlet-name>
         <servlet-class>Controllers.studentLogServlet</servlet-class>
-        <init-param>
-            <param-name>jdbcClassName</param-name>
-            <param-value>com.mysql.cj.jdbc.Driver</param-value>
-        </init-param>
-        <init-param>
-            <param-name>dbUserName</param-name>
-            <param-value>root</param-value>
-        </init-param>
-        <init-param>
-            <param-name>dbPassword</param-name>
-            <param-value>MyNewPass</param-value>
-        </init-param>
-        <init-param>
-            <param-name>jdbcDriverURL</param-name>
-            <param-value>jdbc:mysql://localhost:3306/ustfits?useSSL=false</param-value>
-        </init-param>
-        <init-param>
-            <param-name>databaseName</param-name>
-            <param-value>ustfits</param-value>
-        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -56,17 +16,20 @@
         <servlet-name>studentLogServlet</servlet-name>
         <url-pattern>/studentLogServlet</url-pattern>
     </servlet-mapping>
-   
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
     <welcome-file-list>
         <welcome-file>Index.jsp</welcome-file>
     </welcome-file-list>
-    
-    
-    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>505</error-code>
+        <location>/505error.jsp</location>
+    </error-page>
 </web-app>
