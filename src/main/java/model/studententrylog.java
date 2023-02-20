@@ -23,7 +23,6 @@ public class studententrylog {
         " (?, ?, ?, ?);";
 
     private static final String SELECT_STUDENTENTRY_BY_SN = "select SN,NAME,ENTRYTYPE,TIMESTAMP from studententrylog where SN =?";
-    private static final String SELECT_ALL_STUDENTENTRY = "select * from studententrylog";
     private static final String DELETE_STUDENTENTRY_SQL = "delete from studententrylog where SN = ?;";
     private static final String UPDATE_STUDENTENTRY_SQL = "update studententrylog set NAME = ?,ENTRYTYPE= ?, TIMESTAMP =? where SN = ?;";
 
@@ -33,13 +32,16 @@ public class studententrylog {
         this.jdbcUsername = jdbcUsername;
         this.jdbcPassword = jdbcPassword;
     }
+
+    public studententrylog() {
+    }
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(url, user, password);
+        return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
     }
     
     public List<Student> getAllEntry() {
         List<Student> students = new ArrayList<>();
-        String query = "SELECT * FROM ustfits/studententrylog";             //The database name for Student
+        String query = "SELECT * FROM studententrylog";             //The database name for Student
         try (Connection connection = getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
@@ -134,5 +136,9 @@ public class studententrylog {
                 }
             }
         }
+    }
+
+    public boolean insertData(int ID, Connection conn) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

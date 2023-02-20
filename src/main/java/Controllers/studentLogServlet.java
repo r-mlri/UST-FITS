@@ -3,14 +3,10 @@ package Controllers;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 
 import javax.servlet.ServletException;
@@ -20,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.studententrylog;
-import model.studentLog;
 import model.studentselectlog;
 
 /**
